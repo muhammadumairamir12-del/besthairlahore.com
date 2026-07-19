@@ -1,0 +1,14 @@
+/* TEAM */
+  Surgeon & Clinical Lead: Dr. Asif Ameer (Medical Director)
+  Site Developer & SEO Architect: Antigravity AI
+  Contact: info@htaesthetics.com
+
+/* THANKS */
+  Patients of HT Hair Transplant for trusting us with their restoration journeys.
+
+/* SITE TECHNOLOGY & STANDARDS */
+  Standards: HTML5, CSS3, ES6 JavaScript
+  Fonts: Playfair Display, Inter (Google Fonts)
+  Icons: Native Emojis & Custom SVG Vectors
+  Structured Data: JSON-LD (FAQPage, MedicalClinic, LocalBusiness Schema)
+  Target Domain: https://www.besthairlahore.com/

@@ -1,0 +1,541 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Interactive Hair Graft Calculator & Cost Estimator | HT Hair Transplant</title>
+  <meta name="description" content="Calculate your required hair transplant grafts and estimate FUE/DHI costs in Pakistan instantly with our interactive Norwood scale hair loss calculator.">
+  <meta name="keywords" content="hair graft calculator, hair loss calculator, Norwood scale calculator, hair transplant cost estimator, graft count check">
+  <link rel="canonical" href="https://www.besthairlahore.com/graft-calculator.html">
+  <link rel="icon" type="image/jpeg" href="assets/logo.jpg">
+  <link rel="shortcut icon" href="assets/logo.jpg" type="image/jpeg">
+  
+  <!-- Open Graph -->
+  <meta property="og:title" content="Interactive Hair Graft Calculator & Cost Estimator | HT Hair Transplant">
+  <meta property="og:description" content="Calculate your required hair transplant grafts and estimate FUE/DHI costs in Pakistan instantly with our interactive Norwood scale hair loss calculator.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://www.besthairlahore.com/graft-calculator.html">
+  <meta property="og:site_name" content="HT Hair Transplant">
+  <meta property="og:image" content="assets/og-image.jpg">
+  <meta name="twitter:card" content="summary_large_image">
+  
+  <!-- Preload fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;0,900;1,400&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  
+  <link rel="stylesheet" href="css/style.css">
+  
+  <!-- Custom Tool Styles -->
+  <style>
+    .calculator-wrapper {
+      display: grid;
+      grid-template-columns: 1.2fr 1fr;
+      gap: 40px;
+      margin: 40px 0;
+    }
+    .calculator-left {
+      background: var(--white);
+      padding: 35px;
+      border-radius: 12px;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.05);
+      border: 1px solid #EBF3FF;
+    }
+    .calculator-right {
+      background: var(--navy);
+      color: var(--white);
+      padding: 35px;
+      border-radius: 12px;
+      box-shadow: 0 4px 20px rgba(10,22,40,0.15);
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+    .stage-card-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 15px;
+      margin: 25px 0;
+    }
+    .stage-card {
+      background: #F8FAFC;
+      border: 2px solid #E2E8F0;
+      padding: 15px;
+      border-radius: 8px;
+      text-align: center;
+      cursor: pointer;
+      transition: all 0.3s ease;
+    }
+    .stage-card:hover {
+      border-color: var(--blue);
+      transform: translateY(-2px);
+    }
+    .stage-card.active {
+      border-color: var(--blue);
+      background: var(--white);
+      box-shadow: 0 4px 12px rgba(27,102,236,0.15);
+    }
+    .stage-card h4 {
+      font-size: 1rem;
+      color: var(--navy);
+      margin-bottom: 5px;
+    }
+    .stage-card p {
+      font-size: 0.75rem;
+      color: var(--text-muted);
+      margin: 0;
+    }
+    .custom-range-slider {
+      width: 100%;
+      margin: 20px 0;
+      cursor: pointer;
+    }
+    .results-value {
+      font-size: 3rem;
+      font-family: var(--font-headings);
+      font-weight: 700;
+      color: var(--gold-light);
+      line-height: 1.1;
+      margin-bottom: 10px;
+    }
+    .results-detail {
+      border-top: 1px solid rgba(255,255,255,0.1);
+      padding-top: 20px;
+      margin-top: 20px;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 20px;
+    }
+    .detail-card {
+      background: rgba(255,255,255,0.04);
+      padding: 15px;
+      border-radius: 6px;
+      border: 1px solid rgba(255,255,255,0.06);
+    }
+    .detail-card span {
+      font-size: 0.75rem;
+      color: rgba(255,255,255,0.6);
+      display: block;
+      margin-bottom: 5px;
+    }
+    .detail-card strong {
+      font-size: 1rem;
+      color: var(--white);
+    }
+    @media (max-width: 991px) {
+      .calculator-wrapper {
+        grid-template-columns: 1fr;
+      }
+    }
+    @media (max-width: 600px) {
+      .stage-card-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+      .results-detail {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- TOP CONTACT BAR -->
+  <div class="top-bar">
+    <div class="container top-bar-inner">
+      <div class="top-left">
+        <span>📍 DHA, Lahore, Pakistan</span>
+        <span class="separator">|</span>
+        <span>🕐 Mon - Fri: 10 AM - 8 PM</span>
+      </div>
+      <div class="top-right">
+        <a href="mailto:info@htaesthetics.com">✉️ info@htaesthetics.com</a>
+        <span class="separator">|</span>
+        <a href="tel:+923004610777">📞 +92 300 4610777</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- GLOBAL HEADER -->
+  <header class="navbar">
+    <a href="index.html" class="logo">
+      <div class="logo-main">HT <span class="logo-gold">Hair Transplant</span></div>
+      <div class="logo-tagline">Natural Results. Real Confidence.</div>
+    </a>
+    
+    <nav class="nav-menu">
+      <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li class="dropdown">
+          <a href="services.html" class="dropdown-toggle">Services <span class="arrow">▾</span></a>
+          <ul class="dropdown-menu">
+            <li><a href="services.html#fue-hair-transplant">FUE Hair Transplant</a></li>
+            <li><a href="services.html#dhi-hair-transplant">DHI Hair Transplant</a></li>
+            <li><a href="services.html#exosome-therapy">Exosome Therapy</a></li>
+            <li><a href="services.html#hair-prp-treatment">Hair PRP Treatment</a></li>
+            <li><a href="services.html#acne-scars-treatment">Acne & Scars</a></li>
+            <li><a href="services.html#botox-fillers">Botox & Fillers</a></li>
+            <li><a href="services.html#laser-hair-removal">Laser Hair Removal</a></li>
+          </ul>
+        </li>
+        <li class="dropdown">
+          <a href="#" class="dropdown-toggle">Cities <span class="arrow">▾</span></a>
+          <ul class="dropdown-menu">
+            <li><a href="hair-transplant-lahore.html">Lahore</a></li>
+            <li><a href="hair-transplant-karachi.html">Karachi</a></li>
+            <li><a href="hair-transplant-islamabad.html">Islamabad</a></li>
+            <li><a href="hair-transplant-rawalpindi.html">Rawalpindi</a></li>
+            <li><a href="hair-transplant-faisalabad.html">Faisalabad</a></li>
+          </ul>
+        </li>
+        <li><a href="about.html">About Us</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </nav>
+
+    <div class="nav-right">
+      <a href="tel:+923004610777" class="nav-phone">
+        <span class="phone-icon">📞</span> +92 300 4610777
+      </a>
+      <a href="book-appointment.html" class="btn-primary nav-book-btn">Book Appointment</a>
+      <button class="hamburger" aria-label="Toggle Menu">
+        <span class="bar"></span>
+        <span class="bar"></span>
+        <span class="bar"></span>
+      </button>
+    </div>
+  </header>
+
+  <!-- MOBILE NAVIGATION DRAWER -->
+  <div class="mobile-drawer">
+    <div class="drawer-header" style="align-items: center; gap: 10px;">
+      <div style="display: flex; align-items: center; gap: 10px;">
+        <div class="logo-badge mobile-badge">
+          <img src="assets/logo.jpg" alt="HT Hair Transplant Logo">
+        </div>
+        <div class="logo-main" style="font-size: 1.2rem; line-height: 1.2;">HT <span class="logo-gold">Hair Transplant</span></div>
+      </div>
+      <button class="close-drawer" aria-label="Close Menu">&times;</button>
+    </div>
+    <ul class="drawer-links">
+      <li><a href="index.html">Home</a></li>
+      <li class="drawer-dropdown">
+        <a href="#" class="drawer-dropdown-toggle">Services <span class="arrow">▾</span></a>
+        <ul class="drawer-submenu">
+          <li><a href="services.html#fue-hair-transplant">FUE Hair Transplant</a></li>
+          <li><a href="services.html#dhi-hair-transplant">DHI Hair Transplant</a></li>
+          <li><a href="services.html#exosome-therapy">Exosome Therapy</a></li>
+          <li><a href="services.html#hair-prp-treatment">Hair PRP Treatment</a></li>
+          <li><a href="services.html#acne-scars-treatment">Acne & Scars</a></li>
+          <li><a href="services.html#botox-fillers">Botox & Fillers</a></li>
+          <li><a href="services.html#laser-hair-removal">Laser Hair Removal</a></li>
+        </ul>
+      </li>
+      <li class="drawer-dropdown">
+        <a href="#" class="drawer-dropdown-toggle">Cities <span class="arrow">▾</span></a>
+        <ul class="drawer-submenu">
+          <li><a href="hair-transplant-lahore.html">Lahore</a></li>
+          <li><a href="hair-transplant-karachi.html">Karachi</a></li>
+          <li><a href="hair-transplant-islamabad.html">Islamabad</a></li>
+          <li><a href="hair-transplant-rawalpindi.html">Rawalpindi</a></li>
+          <li><a href="hair-transplant-faisalabad.html">Faisalabad</a></li>
+        </ul>
+      </li>
+      <li><a href="about.html">About Us</a></li>
+      <li><a href="contact.html">Contact</a></li>
+      <li><a href="book-appointment.html" class="drawer-book-btn">Book Appointment</a></li>
+      <li><a href="tel:+923004610777" class="drawer-phone">📞 +92 300 4610777</a></li>
+    </ul>
+  </div>
+  <div class="drawer-overlay"></div>
+
+  <!-- SUB PAGE HERO -->
+  <section class="sub-hero">
+    <div class="container">
+      <h1 class="animate-fadeInUp">Graft Calculator & Hair Analyzer</h1>
+      <div class="breadcrumbs animate-fadeInUp" style="animation-delay: 200ms;">
+        <a href="index.html">Home</a> &gt; <span>Interactive Tool</span>
+      </div>
+    </div>
+  </section>
+
+  <main>
+    <!-- CALCULATOR SECTION -->
+    <section class="section-padding" style="background: var(--white);">
+      <div class="container">
+        <div class="section-header text-center" style="max-width: 800px; margin: 0 auto 40px auto;">
+          <h2 class="reveal">Interactive Hair Loss Estimator</h2>
+          <p class="reveal subtitle" style="animation-delay: 100ms;">Select your current hair thinning stage based on the Norwood Scale below to instantly estimate required grafts, recommended techniques, recovery times, and cost packages.</p>
+        </div>
+
+        <div class="calculator-wrapper">
+          <!-- INPUT BLOCK -->
+          <div class="calculator-left reveal">
+            <h3 style="font-family: var(--font-headings); font-size: 1.5rem; color: var(--navy); margin-bottom: 20px;">1. Choose Your Thinning Pattern</h3>
+            
+            <div class="stage-card-grid">
+              <div class="stage-card active" data-stage="2">
+                <h4>Stage 2</h4>
+                <p>Receded temples</p>
+              </div>
+              <div class="stage-card" data-stage="3">
+                <h4>Stage 3</h4>
+                <p>Deep temple recession</p>
+              </div>
+              <div class="stage-card" data-stage="4">
+                <h4>Stage 4</h4>
+                <p>Frontal + crown thinning</p>
+              </div>
+              <div class="stage-card" data-stage="5">
+                <h4>Stage 5</h4>
+                <p>Significant bridge loss</p>
+              </div>
+              <div class="stage-card" data-stage="6">
+                <h4>Stage 6</h4>
+                <p>Frontal & crown merged</p>
+              </div>
+              <div class="stage-card" data-stage="7">
+                <h4>Stage 7</h4>
+                <p>Severe advanced loss</p>
+              </div>
+            </div>
+
+            <div style="margin-top: 30px;">
+              <h3 style="font-family: var(--font-headings); font-size: 1.5rem; color: var(--navy); margin-bottom: 10px;">2. Fine-tune Graft Count</h3>
+              <p style="font-size: 0.85rem; color: var(--text-muted); margin-bottom: 15px;">Use the slider to customize density based on your natural donor availability and goals.</p>
+              <input type="range" class="custom-range-slider" id="graft-slider" min="1000" max="5500" step="100" value="1500">
+              <div style="display: flex; justify-content: space-between; font-size: 0.85rem; font-weight: 600; color: var(--navy);">
+                <span>1,000 Grafts (Minimum)</span>
+                <span>5,500 Grafts (Maximum)</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- RESULTS BLOCK -->
+          <div class="calculator-right reveal" style="animation-delay: 100ms;">
+            <div>
+              <h3 style="font-family: var(--font-headings); font-size: 1.4rem; color: var(--white); border-bottom: 1px solid rgba(255,255,255,0.1); padding-bottom: 15px; margin-bottom: 25px;">Estimated Treatment Profile</h3>
+              
+              <span>ESTIMATED GRAFTS REQUIRED:</span>
+              <div class="results-value" id="graft-display">1500 Grafts</div>
+              
+              <div class="results-detail">
+                <div class="detail-card">
+                  <span>RECOMMENDED METHOD</span>
+                  <strong id="method-display">FUE Transplant</strong>
+                </div>
+                <div class="detail-card">
+                  <span>PROCEDURE TIMING</span>
+                  <strong id="time-display">4 - 5 Hours</strong>
+                </div>
+                <div class="detail-card">
+                  <span>FUE PACKAGES (PKR)</span>
+                  <strong id="fue-display">90,000 - 120,000</strong>
+                </div>
+                <div class="detail-card">
+                  <span>DHI PACKAGES (PKR)</span>
+                  <strong id="dhi-display">120,000 - 150,000</strong>
+                </div>
+              </div>
+            </div>
+
+            <div style="margin-top: 30px;">
+              <a href="book-appointment.html" class="btn-primary" style="background: var(--gold); color: var(--navy); text-align: center; display: block; border-radius: 8px; width: 100%; border: none;">📅 Book Free Density Verification</a>
+              <p style="font-size: 0.75rem; color: rgba(255,255,255,0.5); text-align: center; margin-top: 10px; margin-bottom: 0;">
+                Calculated ranges are statistical averages. Local consultations in Lahore include microscopic hair follicle checks.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- PROMOTIONAL ACCORDION STATS -->
+    <section class="section-padding" style="background: #F8FAFC;">
+      <div class="container" style="max-width: 900px;">
+        <div class="section-header text-center">
+          <h2 class="reveal">Why Graft Calculations Matter</h2>
+          <p class="reveal subtitle" style="animation-delay: 100ms;">Over-harvesting the donor zone is irreversible. Safe planning ensures lifetime results.</p>
+        </div>
+
+        <div style="display: flex; flex-direction: column; gap: 20px; margin-top: 40px;">
+          <div class="reveal" style="background: var(--white); padding: 25px; border-radius: 8px; border-left: 4px solid var(--blue);">
+            <h4 style="font-size: 1.1rem; color: var(--navy); margin-bottom: 10px; font-weight: 700;">Protecting the Safe Donor Area</h4>
+            <p style="font-size: 0.9rem; color: var(--text-muted); margin: 0;">Grafts are harvested from the back and sides of the head. Since this hair is limited, harvesting too many grafts in one go can cause visible thinning (moth-eaten look) in your donor zone. A precise calculation ensures we stay within safe extraction limits.</p>
+          </div>
+          <div class="reveal" style="background: var(--white); padding: 25px; border-radius: 8px; border-left: 4px solid var(--blue); animation-delay: 100ms;">
+            <h4 style="font-size: 1.1rem; color: var(--navy); margin-bottom: 10px; font-weight: 700;">FUE vs DHI Placement Densities</h4>
+            <p style="font-size: 0.9rem; color: var(--text-muted); margin: 0;">Standard FUE is perfect for large areas, yielding 35-45 grafts per square centimeter. DHI (Choi Pen technique) allows closer placement, yielding up to 55-65 grafts per square centimeter, making it highly effective for rebuilding hairlines or filling thin spots without shaving.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION: CALL TO ACTION -->
+    <section class="final-cta">
+      <div class="top-decor final-cta-decor"></div>
+      <div class="container text-center">
+        <span class="cta-eyebrow">Get Expert Verification</span>
+        <h2>Consult Our Specialists in Lahore</h2>
+        <p>Book a free visit to our DHA clinic. We will map your donor density and plan a lifetime design.</p>
+        <a href="book-appointment.html" class="btn-primary">📅 Book Free Assessment</a>
+        <a href="https://wa.me/923004610777" class="cta-wa-link" target="_blank" rel="noopener">Or message photos to +92 300 4610777 →</a>
+      </div>
+      <div class="bottom-decor final-cta-decor"></div>
+    </section>
+  </main>
+
+  <!-- GLOBAL FOOTER -->
+  <footer class="footer">
+    <div class="container footer-grid">
+      <!-- Col 1 -->
+      <div class="footer-col">
+        <a href="index.html" class="logo footer-logo" style="display: flex; align-items: center; gap: 12px; margin-bottom: 20px;">
+          <div class="logo-badge footer-badge">
+            <img src="assets/logo.jpg" alt="HT Hair Transplant Logo">
+          </div>
+          <div style="display: flex; flex-direction: column;">
+            <div class="logo-main" style="line-height: 1.2; color: #fff;">HT <span class="logo-gold">Hair Transplant</span></div>
+            <div class="logo-tagline">Natural Results. Real Confidence.</div>
+          </div>
+        </a>
+        <p class="footer-desc">HT Hair Transplant is a leading hair restoration clinic in Pakistan, dedicated to state-of-the-art treatments with permanent, natural results.</p>
+        <div class="footer-socials">
+          <a href="https://www.facebook.com/profile.php?id=61578821855652" target="_blank" rel="noopener" aria-label="Facebook">FB</a>
+          <a href="https://www.instagram.com/htaesthetiq/" target="_blank" rel="noopener" aria-label="Instagram">IG</a>
+          <a href="https://wa.me/923004610777" target="_blank" rel="noopener" aria-label="WhatsApp">WA</a>
+        </div>
+      </div>
+
+      <!-- Col 2 -->
+      <div class="footer-col">
+        <h4>Treatments</h4>
+        <ul class="footer-links">
+          <li><a href="services.html#fue-hair-transplant">FUE Hair Transplant</a></li>
+          <li><a href="services.html#dhi-hair-transplant">DHI Hair Transplant</a></li>
+          <li><a href="services.html#exosome-therapy">Exosome Therapy</a></li>
+          <li><a href="services.html#hair-prp-treatment">PRP Hair Treatment</a></li>
+          <li><a href="services.html#acne-scars-treatment">Acne & Scars Treatment</a></li>
+        </ul>
+      </div>
+
+      <!-- Col 3 -->
+      <div class="footer-col">
+        <h4>Cities</h4>
+        <ul class="footer-links">
+          <li><a href="hair-transplant-lahore.html">Lahore</a></li>
+          <li><a href="hair-transplant-karachi.html">Karachi</a></li>
+          <li><a href="hair-transplant-islamabad.html">Islamabad</a></li>
+          <li><a href="hair-transplant-rawalpindi.html">Rawalpindi</a></li>
+          <li><a href="hair-transplant-faisalabad.html">Faisalabad</a></li>
+        </ul>
+      </div>
+
+      <!-- Col 4 -->
+      <div class="footer-col">
+        <h4>Contact Us</h4>
+        <ul class="footer-contact">
+          <li><span>📍</span> DHA, Lahore, Pakistan</li>
+          <li><span>📞</span> +92 300 4610777</li>
+          <li><span>✉️</span> info@htaesthetics.com</li>
+          <li><span>🕐</span> Mon - Fri: 10 AM - 8 PM</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <div class="container footer-bottom-inner">
+        <div>&copy; 2026 HT Hair Transplant. All rights reserved.</div>
+        <div class="footer-bottom-links">
+          <a href="faqs.html">FAQs</a>
+          <a href="hair-transplant-cost-pakistan.html">Cost Guide</a>
+          <a href="graft-calculator.html">Graft Calculator</a>
+          <a href="statistics.html">Clinical Stats</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- WHATSAPP FLOAT WIDGET -->
+  <a href="https://wa.me/923004610777" class="whatsapp-float" target="_blank" rel="noopener" aria-label="Contact on WhatsApp">
+    <svg width="34" height="34" viewBox="0 0 24 24" fill="none" stroke="#FFFFFF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"/>
+    </svg>
+  </a>
+
+  <!-- CORE SCRIPTS -->
+  <script src="js/main.js"></script>
+
+  <!-- CALCULATOR SCRIPT -->
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const slider = document.getElementById('graft-slider');
+      const graftDisplay = document.getElementById('graft-display');
+      const methodDisplay = document.getElementById('method-display');
+      const timeDisplay = document.getElementById('time-display');
+      const fueDisplay = document.getElementById('fue-display');
+      const dhiDisplay = document.getElementById('dhi-display');
+      const cards = document.querySelectorAll('.stage-card');
+
+      const stageProfiles = {
+        '2': { minGrafts: 1200, maxGrafts: 1500, default: 1300, method: 'FUE / DHI / PRP', duration: '3 - 4 Hours' },
+        '3': { minGrafts: 1500, maxGrafts: 2200, default: 1800, method: 'FUE or DHI', duration: '4 - 5 Hours' },
+        '4': { minGrafts: 2200, maxGrafts: 3000, default: 2500, method: 'FUE or DHI', duration: '5 - 6 Hours' },
+        '5': { minGrafts: 3000, maxGrafts: 3800, default: 3400, method: 'FUE or DHI', duration: '6 - 7 Hours' },
+        '6': { minGrafts: 3800, maxGrafts: 4500, default: 4100, method: 'FUE (2 Sessions)', duration: '7 - 8 Hours' },
+        '7': { minGrafts: 4500, maxGrafts: 5500, default: 5000, method: 'FUE (2 Sessions)', duration: '8+ Hours' }
+      };
+
+      function updateCalculator(stage, graftVal) {
+        const profile = stageProfiles[stage];
+        
+        // If graftVal is not supplied, use default for stage
+        let grafts = graftVal || profile.default;
+        
+        // Clamping values within slider boundaries just in case
+        if (grafts < profile.minGrafts) grafts = profile.minGrafts;
+        if (grafts > profile.maxGrafts) grafts = profile.maxGrafts;
+
+        // Sync slider
+        slider.min = profile.minGrafts;
+        slider.max = profile.maxGrafts;
+        slider.value = grafts;
+
+        // Display results
+        graftDisplay.textContent = grafts.toLocaleString() + ' Grafts';
+        methodDisplay.textContent = profile.method;
+        timeDisplay.textContent = profile.duration;
+
+        // Estimate Costs based on graft count: FUE (~PKR 60/graft), DHI (~PKR 80/graft)
+        const fueMin = Math.round(grafts * 55);
+        const fueMax = Math.round(grafts * 65);
+        const dhiMin = Math.round(grafts * 75);
+        const dhiMax = Math.round(grafts * 85);
+
+        fueDisplay.textContent = \`\${fueMin.toLocaleString()} - \${fueMax.toLocaleString()}\`;
+        dhiDisplay.textContent = \`\${dhiMin.toLocaleString()} - \${dhiMax.toLocaleString()}\`;
+      }
+
+      // Handle card selection
+      cards.forEach(card => {
+        card.addEventListener('click', () => {
+          cards.forEach(c => c.classList.remove('active'));
+          card.classList.add('active');
+          const stage = card.dataset.stage;
+          updateCalculator(stage);
+        });
+      });
+
+      // Handle slider movement
+      slider.addEventListener('input', (e) => {
+        const val = parseInt(e.target.value);
+        const activeCard = document.querySelector('.stage-card.active');
+        const stage = activeCard.dataset.stage;
+        updateCalculator(stage, val);
+      });
+
+      // Initialize
+      updateCalculator('2');
+    });
+  </script>
+</body>
+</html>

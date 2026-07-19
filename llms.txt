@@ -1,0 +1,27 @@
+# HT Hair Transplant Clinic (besthairlahore.com)
+
+Welcome to the LLM-readable directory for HT Hair Transplant, a premium hair restoration and aesthetic clinic based in DHA, Lahore, Pakistan.
+
+## Core Information
+- **Official Domain**: https://www.besthairlahore.com/
+- **Brand Name**: HT Hair Transplant
+- **Services**: FUE (Follicular Unit Extraction), DHI (Direct Hair Implantation), Exosome Regenerative Therapy, Platelet-Rich Plasma (PRP) Therapy, Acne Scars Treatment, Botox & Fillers, Laser Hair Removal.
+- **Location**: DHA, Lahore, Pakistan (Target areas: Lahore, Karachi, Islamabad, Rawalpindi, Faisalabad).
+- **Contact Phone**: +92 300 4610777 (WhatsApp: https://wa.me/923004610777)
+- **Email**: info@htaesthetics.com
+- **Operating Hours**: Monday–Friday 10:00 AM – 8:00 PM (PKT).
+
+## Site Structure & Pages
+- **Home Page** (https://www.besthairlahore.com/index.html): Explains clinical indicators, doctor reviews, why choose cards, and features an interactive before-after slider (FUE 3200 grafts and DHI 2500 grafts).
+- **Services** (https://www.besthairlahore.com/services.html): Complete treatments layout with detailed procedures for FUE, DHI, PRP, and skincare.
+- **FAQ Hub** (https://www.besthairlahore.com/faqs.html): Conversational Q&A answering graft density, cost queries, pain thresholds, and recovery details.
+- **Cost Guide** (https://www.besthairlahore.com/hair-transplant-cost-pakistan.html): Graft-based pricing tables and package comparisons for FUE and DHI in Lahore, Karachi, and Islamabad.
+- **About Us** (https://www.besthairlahore.com/about.html): Mission, vision, core doctor records, and clinical accreditations.
+- **Contact** (https://www.besthairlahore.com/contact.html): Addresses, direct phone lines, map iframe coordinates, and enquiry forms.
+
+## City SEO Landing Pages
+- **Lahore**: https://www.besthairlahore.com/hair-transplant-lahore.html
+- **Karachi**: https://www.besthairlahore.com/hair-transplant-karachi.html
+- **Islamabad**: https://www.besthairlahore.com/hair-transplant-islamabad.html
+- **Rawalpindi**: https://www.besthairlahore.com/hair-transplant-rawalpindi.html
+- **Faisalabad**: https://www.besthairlahore.com/hair-transplant-faisalabad.html

@@ -1,0 +1,154 @@
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "MedicalClinic",
+      "@id": "https://www.besthairlahore.com/#clinic",
+      "name": "HT Hair Transplant",
+      "alternateName": "HT Hair Restoration Clinic",
+      "url": "https://www.besthairlahore.com/",
+      "logo": "https://www.besthairlahore.com/assets/logo.jpg",
+      "image": "https://www.besthairlahore.com/assets/og-image.jpg",
+      "telephone": "+923004610777",
+      "email": "info@htaesthetics.com",
+      "priceRange": "$$",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "DHA",
+        "addressLocality": "Lahore",
+        "addressRegion": "Punjab",
+        "postalCode": "54000",
+        "addressCountry": "PK"
+      },
+      "geo": {
+        "@type": "GeoCoordinates",
+        "latitude": "31.4700",
+        "longitude": "74.4100"
+      },
+      "openingHoursSpecification": [
+        {
+          "@type": "OpeningHoursSpecification",
+          "dayOfWeek": [
+            "Monday",
+            "Tuesday",
+            "Wednesday",
+            "Thursday",
+            "Friday"
+          ],
+          "opens": "10:00",
+          "closes": "20:00"
+        }
+      ],
+      "sameAs": [
+        "https://www.facebook.com/profile.php?id=61578821855652",
+        "https://www.instagram.com/htaesthetiq/",
+        "https://wa.me/923004610777"
+      ],
+      "medicalSpecialty": "CosmeticReconstruction",
+      "availableService": [
+        {
+          "@type": "MedicalProcedure",
+          "name": "FUE Hair Transplant",
+          "description": "Follicular Unit Extraction is the gold standard for restoring permanent natural hair density."
+        },
+        {
+          "@type": "MedicalProcedure",
+          "name": "DHI Hair Transplant",
+          "description": "Direct Hair Implantation using Choi pens for precise placement, depth, and angles."
+        }
+      ],
+      "founder": {
+        "@type": "Person",
+        "name": "Dr. Asif Ameer",
+        "jobTitle": "Senior Hair Transplant Surgeon & Medical Director",
+        "sameAs": [
+          "https://www.besthairlahore.com/about.html"
+        ]
+      },
+      "employee": [
+        {
+          "@type": "Person",
+          "name": "Dr. Asif Ameer",
+          "jobTitle": "Senior Hair Transplant Surgeon & Medical Director"
+        }
+      ]
+    },
+    {
+      "@type": "FAQPage",
+      "@id": "https://www.besthairlahore.com/#faq",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "What is the average hair transplant cost in Pakistan?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "The hair transplant cost in Pakistan ranges from PKR 80,000 to PKR 350,000 depending on the graft count, surgical technique (FUE vs DHI), and the clinic standard."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Are hair transplant results permanent?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes, hair transplant results are permanent because transplanted follicles are harvested from safe donor zones genetically resistant to hair thinning."
+          }
+        }
+      ]
+    },
+    {
+      "@type": "BreadcrumbList",
+      "@id": "https://www.besthairlahore.com/#breadcrumb",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Home",
+          "item": "https://www.besthairlahore.com/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Lahore Branch",
+          "item": "https://www.besthairlahore.com/hair-transplant-lahore.html"
+        }
+      ]
+    },
+    {
+      "@type": "Review",
+      "itemReviewed": {
+        "@type": "MedicalClinic",
+        "name": "HT Hair Transplant"
+      },
+      "reviewRating": {
+        "@type": "Rating",
+        "ratingValue": "5",
+        "bestRating": "5"
+      },
+      "author": {
+        "@type": "Person",
+        "name": "Hamza S."
+      },
+      "reviewBody": "Best decision of my life. The team at HT Hair Transplant in Lahore is truly world-class. Hair looks completely natural."
+    },
+    {
+      "@type": "Article",
+      "headline": "Hair Transplant Cost in Pakistan | Graft Pricing Guide",
+      "description": "Complete transparent pricing guide for FUE and DHI hair restoration in Pakistan.",
+      "image": "https://www.besthairlahore.com/assets/og-image.jpg",
+      "author": {
+        "@type": "Organization",
+        "name": "HT Hair Transplant"
+      },
+      "publisher": {
+        "@type": "Organization",
+        "name": "HT Hair Transplant",
+        "logo": {
+          "@type": "ImageObject",
+          "url": "https://www.besthairlahore.com/assets/logo.jpg"
+        }
+      },
+      "datePublished": "2026-07-19",
+      "mainEntityOfPage": "https://www.besthairlahore.com/hair-transplant-cost-pakistan.html"
+    }
+  ]
+}

@@ -1663,6 +1663,89 @@ a {
   color: var(--white);
 }
 
+/* === RESPONSIVE GRIDS & CTAS === */
+.about-intro-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 50px;
+  align-items: center;
+}
+.surgeon-grid {
+  display: grid;
+  grid-template-columns: 1fr 1.2fr;
+  gap: 50px;
+  align-items: center;
+}
+.btn-navy-outline {
+  display: inline-block;
+  background: transparent;
+  color: var(--navy);
+  padding: 12px 24px;
+  border: 2px solid var(--navy);
+  border-radius: var(--radius);
+  font-weight: 600;
+  font-size: 0.95rem;
+  cursor: pointer;
+  transition: var(--transition);
+  text-align: center;
+}
+.btn-navy-outline:hover {
+  background: var(--blue-light);
+  border-color: var(--blue);
+  color: var(--blue);
+  transform: translateY(-2px);
+}
+.surgeon-ctas {
+  display: flex;
+  gap: 15px;
+}
+section[id] {
+  scroll-margin-top: 100px;
+}
+
+@media (max-width: 1024px) {
+  .about-intro-grid, .surgeon-grid {
+    grid-template-columns: 1fr;
+    gap: 40px;
+    text-align: center;
+  }
+  .about-intro-grid .reveal-left,
+  .surgeon-grid .reveal-right {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+  .about-intro-grid .reveal,
+  .surgeon-grid .reveal {
+    height: 380px !important;
+    max-width: 320px;
+    margin: 0 auto;
+  }
+  .surgeon-ctas {
+    justify-content: center;
+  }
+}
+
+@media (max-width: 480px) {
+  .about-intro-grid .reveal,
+  .surgeon-grid .reveal {
+    height: 300px !important;
+    max-width: 260px;
+  }
+  .surgeon-ctas {
+    flex-direction: column;
+    align-items: stretch;
+    width: 100%;
+    max-width: 280px;
+    margin: 0 auto;
+    gap: 10px;
+  }
+  .surgeon-ctas a {
+    width: 100%;
+  }
+}
+
 /* === RESPONSIVE BREAKPOINTS === */
 @media (max-width: 1200px) {
   .hero-container { gap: 30px; }

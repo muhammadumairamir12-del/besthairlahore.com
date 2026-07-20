@@ -101,7 +101,19 @@
 
   <!-- Non-Surgical Services -->
   <url>
+    <loc>https://www.besthairlahore.com/exosome-hair-treatment.html</loc>
+    <lastmod>2026-07-20</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.90</priority>
+  </url>
+  <url>
     <loc>https://www.besthairlahore.com/prp-therapy.html</loc>
+    <lastmod>2026-07-20</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.85</priority>
+  </url>
+  <url>
+    <loc>https://www.besthairlahore.com/laser-hair-removal.html</loc>
     <lastmod>2026-07-20</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.85</priority>

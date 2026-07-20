@@ -32,7 +32,9 @@ Welcome to the LLM-readable directory for HT Hair Transplant, a premium hair res
 - **Hairline Restoration** (https://www.besthairlahore.com/hairline-restoration.html): The artistic science of hairline design, temporal point restoration, and graft distribution matching facial aesthetics.
 
 ## Non-Surgical Treatment Pages
+- **Exosome Hair Treatment** (https://www.besthairlahore.com/exosome-hair-treatment.html): Advanced biotechnology for cellular hair restoration using cell-free exosome serum, mRNA, and growth factors to trigger dormant follicle growth.
 - **PRP Therapy** (https://www.besthairlahore.com/prp-therapy.html): Platelet-Rich Plasma protocols for hair thinning, spin cycles, growth factors, and scheduling.
+- **Laser Hair Removal** (https://www.besthairlahore.com/laser-hair-removal.html): High-precision cosmetic laser therapies (Diode and Nd:YAG) for permanent hair reduction across various body zones and skin tones.
 - **Hair Loss Treatment** (https://www.besthairlahore.com/hair-loss-treatment.html): Non-surgical hair loss management, DHT blockers, clinical topicals, and medical assessments.
 - **Scalp Micropigmentation** (https://www.besthairlahore.com/scalp-micropigmentation.html): Scalp tattoo shading and pigmentation guidelines, hair follicle simulation, and ink matching.
 
@@ -48,3 +50,13 @@ Welcome to the LLM-readable directory for HT Hair Transplant, a premium hair res
 - **Islamabad Hub**: https://www.besthairlahore.com/hair-transplant-islamabad.html
 - **Rawalpindi Hub**: https://www.besthairlahore.com/hair-transplant-rawalpindi.html
 - **Faisalabad Hub**: https://www.besthairlahore.com/hair-transplant-faisalabad.html
+- **Multan Hub**: https://www.besthairlahore.com/hair-transplant-multan.html
+- **Peshawar Hub**: https://www.besthairlahore.com/hair-transplant-peshawar.html
+- **Quetta Hub**: https://www.besthairlahore.com/hair-transplant-quetta.html
+- **Sialkot Hub**: https://www.besthairlahore.com/hair-transplant-sialkot.html
+- **Gujranwala Hub**: https://www.besthairlahore.com/hair-transplant-gujranwala.html
+- **Hyderabad Hub**: https://www.besthairlahore.com/hair-transplant-hyderabad.html
+- **Bahawalpur Hub**: https://www.besthairlahore.com/hair-transplant-bahawalpur.html
+- **Sargodha Hub**: https://www.besthairlahore.com/hair-transplant-sargodha.html
+- **Abbottabad Hub**: https://www.besthairlahore.com/hair-transplant-abbottabad.html
+- **Gujrat Hub**: https://www.besthairlahore.com/hair-transplant-gujrat.html

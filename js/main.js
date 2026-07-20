@@ -506,27 +506,39 @@ document.addEventListener('DOMContentLoaded', () => {
       e.preventDefault();
       if (validateStep3()) {
         const submitBtn = form.querySelector('button[type="submit"]');
-        const originalText = submitBtn.innerHTML;
         submitBtn.disabled = true;
-        submitBtn.innerHTML = 'Submitting... <span class="spinner"></span>';
+        submitBtn.innerHTML = 'Redirecting to WhatsApp... <span class="spinner"></span>';
 
-        // Simulate API call
+        const fullname = document.getElementById('fullname').value.trim();
+        const phone = document.getElementById('phone').value.trim();
+        const city = document.getElementById('city').value;
+        const service = document.querySelector('input[name="service_selection"]:checked').value;
+        const date = document.getElementById('pref-date').value;
+        const time = document.querySelector('input[name="time_slot"]:checked').value;
+
+        const whatsappMsg = `*HT Hair Transplant Appointment Inquiry*\n-----------------------------\n*Full Name:* ${fullname}\n*Phone:* ${phone}\n*City:* ${city}\n*Service:* ${service}\n*Preferred Date:* ${date}\n*Preferred Time:* ${time}\n-----------------------------\n_Submitted via website form._`;
+
+        const whatsappUrl = `https://wa.me/923004610777?text=${encodeURIComponent(whatsappMsg)}`;
+
         setTimeout(() => {
           currentStepIdx = 3; // Move to success step index
           
           // Hide progress indicator, replace form contents
           const wrapper = document.querySelector('.booking-form-wrapper');
           wrapper.innerHTML = `
-            <div class="success-step active">
+            <div class="success-step active" style="text-align: center;">
               <div class="success-icon">
                 <span class="success-checkmark">✓</span>
               </div>
-              <h2>Booking Received!</h2>
-              <p>Thank you! Our team will contact you at your provided number within 24 hours. Your confidence journey starts now.</p>
-              <a href="index.html" class="btn-primary">Return to Home</a>
+              <h2>Redirecting to WhatsApp...</h2>
+              <p style="margin-bottom: 20px;">We are opening a WhatsApp chat window to complete your booking. If it did not open automatically, please click the button below to send your details.</p>
+              <a href="${whatsappUrl}" target="_blank" class="btn-primary" style="background:#25d366; border-color:#25d366; margin-bottom:15px; display:inline-block; text-decoration:none;">Send via WhatsApp</a>
+              <br>
+              <a href="index.html" class="btn-primary" style="background:transparent; border-color:var(--navy); color:var(--navy); display:inline-block; text-decoration:none;">Return to Home</a>
             </div>
           `;
-        }, 1500);
+          window.open(whatsappUrl, '_blank');
+        }, 1000);
       }
     });
 
@@ -605,21 +617,33 @@ document.addEventListener('DOMContentLoaded', () => {
       if (isValid) {
         const submitBtn = contactForm.querySelector('button[type="submit"]');
         submitBtn.disabled = true;
-        submitBtn.innerHTML = 'Sending... <span class="spinner"></span>';
+        submitBtn.innerHTML = 'Redirecting to WhatsApp... <span class="spinner"></span>';
+
+        const name = document.getElementById('c-name').value.trim();
+        const email = document.getElementById('c-email').value.trim();
+        const phone = document.getElementById('c-phone').value.trim();
+        const msg = document.getElementById('c-msg').value.trim();
+
+        const whatsappMsg = `*HT Hair Transplant Contact Inquiry*\n-----------------------------\n*Name:* ${name}\n*Email:* ${email}\n*Phone:* ${phone}\n*Message:* ${msg}\n-----------------------------\n_Submitted via website contact form._`;
+
+        const whatsappUrl = `https://wa.me/923004610777?text=${encodeURIComponent(whatsappMsg)}`;
         
         setTimeout(() => {
           const card = contactForm.parentElement;
           card.innerHTML = `
-            <div class="success-step active" style="padding: 40px 0;">
+            <div class="success-step active" style="padding: 40px 0; text-align: center;">
               <div class="success-icon">
                 <span class="success-checkmark">✓</span>
               </div>
-              <h2>Message Sent!</h2>
-              <p>Thank you for reaching out. We have received your inquiry and will get back to you shortly.</p>
-              <a href="index.html" class="btn-primary">Back to Home</a>
+              <h2>Redirecting to WhatsApp...</h2>
+              <p style="margin-bottom: 20px;">Opening WhatsApp chat window to send your message. If it did not open automatically, please click the button below.</p>
+              <a href="${whatsappUrl}" target="_blank" class="btn-primary" style="background:#25d366; border-color:#25d366; margin-bottom:15px; display:inline-block; text-decoration:none;">Send via WhatsApp</a>
+              <br>
+              <a href="index.html" class="btn-primary" style="background:transparent; border-color:var(--navy); color:var(--navy); display:inline-block; text-decoration:none;">Back to Home</a>
             </div>
           `;
-        }, 1500);
+          window.open(whatsappUrl, '_blank');
+        }, 1000);
       }
     });
 

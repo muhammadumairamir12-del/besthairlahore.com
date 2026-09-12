@@ -1,0 +1,472 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta name="robots" content="noindex, nofollow" />
+<title>Best Hair Lahore — Admin</title>
+<style>
+  :root{
+    --bg:#f5f6f8;
+    --card:#ffffff;
+    --border:#e2e5ea;
+    --text:#1c1f26;
+    --muted:#6b7280;
+    --accent:#2f5fdb;
+    --accent-soft:#eef2ff;
+    --danger:#c0392b;
+    --radius:10px;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  }
+  *{ box-sizing:border-box; }
+  body{
+    margin:0;
+    background:var(--bg);
+    color:var(--text);
+    min-height:100vh;
+  }
+
+  /* ---------- Login screen ---------- */
+  #loginScreen{
+    min-height:100vh;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    padding:24px;
+  }
+  .login-box{
+    background:var(--card);
+    border:1px solid var(--border);
+    border-radius:var(--radius);
+    padding:32px;
+    width:100%;
+    max-width:360px;
+  }
+  .login-box h1{
+    font-size:18px;
+    margin:0 0 4px;
+  }
+  .login-box p.sub{
+    color:var(--muted);
+    font-size:13px;
+    margin:0 0 24px;
+  }
+  label{
+    display:block;
+    font-size:13px;
+    font-weight:600;
+    margin-bottom:6px;
+    margin-top:14px;
+  }
+  input[type=email], input[type=password], input[type=text], input[type=tel]{
+    width:100%;
+    padding:10px 12px;
+    border:1px solid var(--border);
+    border-radius:8px;
+    font-size:14px;
+    background:#fff;
+  }
+  button{
+    cursor:pointer;
+    font-size:14px;
+    border:none;
+    border-radius:8px;
+    font-weight:600;
+  }
+  .btn-primary{
+    background:var(--accent);
+    color:#fff;
+    padding:11px 16px;
+    width:100%;
+    margin-top:20px;
+  }
+  .btn-primary:disabled{ opacity:.6; cursor:default; }
+  #loginError{
+    color:var(--danger);
+    font-size:13px;
+    margin-top:12px;
+    display:none;
+  }
+
+  /* ---------- Dashboard ---------- */
+  #dashboard{ display:none; }
+  header{
+    background:#fff;
+    border-bottom:1px solid var(--border);
+    padding:14px 24px;
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    position:sticky;
+    top:0;
+    z-index:5;
+  }
+  header h1{ font-size:16px; margin:0; }
+  header .who{ font-size:12px; color:var(--muted); }
+  #logoutBtn{
+    background:transparent;
+    border:1px solid var(--border);
+    padding:7px 12px;
+    color:var(--text);
+  }
+  main{
+    max-width:1100px;
+    margin:0 auto;
+    padding:24px;
+  }
+  .stats{
+    display:grid;
+    grid-template-columns:repeat(auto-fit, minmax(160px,1fr));
+    gap:12px;
+    margin-bottom:28px;
+  }
+  .stat-card{
+    background:var(--card);
+    border:1px solid var(--border);
+    border-radius:var(--radius);
+    padding:16px;
+  }
+  .stat-card .num{ font-size:26px; font-weight:700; }
+  .stat-card .label{ font-size:12px; color:var(--muted); margin-top:2px; }
+
+  .tabs{
+    display:flex;
+    gap:4px;
+    margin-bottom:16px;
+    border-bottom:1px solid var(--border);
+  }
+  .tab-btn{
+    background:transparent;
+    padding:10px 16px;
+    color:var(--muted);
+    border-bottom:2px solid transparent;
+    font-size:14px;
+  }
+  .tab-btn.active{
+    color:var(--accent);
+    border-bottom-color:var(--accent);
+  }
+
+  .panel{ display:none; }
+  .panel.active{ display:block; }
+
+  .table-wrap{
+    background:var(--card);
+    border:1px solid var(--border);
+    border-radius:var(--radius);
+    overflow:hidden;
+  }
+  table{
+    width:100%;
+    border-collapse:collapse;
+    font-size:13px;
+  }
+  th, td{
+    text-align:left;
+    padding:10px 14px;
+    border-bottom:1px solid var(--border);
+    vertical-align:top;
+  }
+  th{
+    background:#fafbfc;
+    color:var(--muted);
+    font-weight:600;
+    font-size:12px;
+    text-transform:uppercase;
+    letter-spacing:.02em;
+  }
+  tr:last-child td{ border-bottom:none; }
+  .badge{
+    display:inline-block;
+    padding:2px 8px;
+    border-radius:999px;
+    font-size:11px;
+    font-weight:600;
+  }
+  .badge-whatsapp{ background:#e7f7ee; color:#1a7f4b; }
+  .badge-call{ background:var(--accent-soft); color:var(--accent); }
+  .badge-form{ background:#fdf1e0; color:#b06a00; }
+  .empty{
+    padding:32px;
+    text-align:center;
+    color:var(--muted);
+    font-size:13px;
+  }
+  .loading{
+    padding:32px;
+    text-align:center;
+    color:var(--muted);
+    font-size:13px;
+  }
+  footer{
+    text-align:center;
+    color:var(--muted);
+    font-size:12px;
+    padding:24px;
+  }
+</style>
+</head>
+<body>
+
+<!-- ============ LOGIN SCREEN ============ -->
+<div id="loginScreen">
+  <div class="login-box">
+    <h1>Admin Login</h1>
+    <p class="sub">Best Hair Lahore — bookings &amp; contact activity</p>
+
+    <label for="email">Email</label>
+    <input type="email" id="email" autocomplete="username" />
+
+    <label for="password">Password</label>
+    <input type="password" id="password" autocomplete="current-password" />
+
+    <button class="btn-primary" id="loginBtn">Log in</button>
+    <p id="loginError">Login galat hai. Email/password check karein.</p>
+  </div>
+</div>
+
+<!-- ============ DASHBOARD ============ -->
+<div id="dashboard">
+  <header>
+    <h1>Best Hair Lahore — Admin</h1>
+    <div style="display:flex; align-items:center; gap:12px;">
+      <span class="who" id="whoami"></span>
+      <button id="logoutBtn">Log out</button>
+    </div>
+  </header>
+
+  <main>
+    <div class="stats">
+      <div class="stat-card">
+        <div class="num" id="statBookings">0</div>
+        <div class="label">Total bookings</div>
+      </div>
+      <div class="stat-card">
+        <div class="num" id="statWhatsapp">0</div>
+        <div class="label">WhatsApp clicks</div>
+      </div>
+      <div class="stat-card">
+        <div class="num" id="statCall">0</div>
+        <div class="label">Call number clicks</div>
+      </div>
+      <div class="stat-card">
+        <div class="num" id="statToday">0</div>
+        <div class="label">Activity today</div>
+      </div>
+    </div>
+
+    <div class="tabs">
+      <button class="tab-btn active" data-tab="bookings">Bookings</button>
+      <button class="tab-btn" data-tab="clicks">WhatsApp / Call Clicks</button>
+    </div>
+
+    <div class="panel active" id="panel-bookings">
+      <div class="table-wrap">
+        <table>
+          <thead>
+            <tr>
+              <th>Date &amp; time</th>
+              <th>Name</th>
+              <th>Phone</th>
+              <th>Message / Service</th>
+              <th>Page</th>
+            </tr>
+          </thead>
+          <tbody id="bookingsBody"></tbody>
+        </table>
+        <div class="loading" id="bookingsLoading">Loading…</div>
+        <div class="empty" id="bookingsEmpty" style="display:none;">Abhi tak koi booking nahi aayi.</div>
+      </div>
+    </div>
+
+    <div class="panel" id="panel-clicks">
+      <div class="table-wrap">
+        <table>
+          <thead>
+            <tr>
+              <th>Date &amp; time</th>
+              <th>Type</th>
+              <th>Page</th>
+              <th>Number / Message</th>
+            </tr>
+          </thead>
+          <tbody id="clicksBody"></tbody>
+        </table>
+        <div class="loading" id="clicksLoading">Loading…</div>
+        <div class="empty" id="clicksEmpty" style="display:none;">Abhi tak koi click record nahi hua.</div>
+      </div>
+    </div>
+  </main>
+
+  <footer>Ye panel sirf logged-in admin ke liye hai — link kisi ke saath share na karein.</footer>
+</div>
+
+<!-- ============ FIREBASE ============ -->
+<script type="module">
+  import { initializeApp } from "https://www.gstatic.com/firebasejs/10.13.0/firebase-app.js";
+  import {
+    getAuth, signInWithEmailAndPassword, onAuthStateChanged, signOut
+  } from "https://www.gstatic.com/firebasejs/10.13.0/firebase-auth.js";
+  import {
+    getFirestore, collection, query, orderBy, onSnapshot, limit
+  } from "https://www.gstatic.com/firebasejs/10.13.0/firebase-firestore.js";
+
+  // =====================================================================
+  // 1) PASTE YOUR FIREBASE PROJECT CONFIG HERE
+  //    (Firebase console → Project settings → General → Your apps → SDK config)
+  // =====================================================================
+  const firebaseConfig = {
+    apiKey: "AIzaSyCe1PJSsNvuGtM7WzMrvSEfIUTI31Rjfkw",
+    authDomain: "ht-hair-transplant.firebaseapp.com",
+    projectId: "ht-hair-transplant",
+    storageBucket: "ht-hair-transplant.firebasestorage.app",
+    messagingSenderId: "279835413912",
+    appId: "1:279835413912:web:261b035bcce651e9df6fed",
+    measurementId: "G-13XQCEXR25"
+  };
+
+  const app = initializeApp(firebaseConfig);
+  const auth = getAuth(app);
+  const db = getFirestore(app);
+
+  // ---------------- Login ----------------
+  const loginScreen = document.getElementById("loginScreen");
+  const dashboard = document.getElementById("dashboard");
+  const loginBtn = document.getElementById("loginBtn");
+  const loginError = document.getElementById("loginError");
+
+  loginBtn.addEventListener("click", async () => {
+    const email = document.getElementById("email").value.trim();
+    const password = document.getElementById("password").value;
+    loginError.style.display = "none";
+    loginBtn.disabled = true;
+    loginBtn.textContent = "Logging in…";
+    try {
+      await signInWithEmailAndPassword(auth, email, password);
+    } catch (err) {
+      loginError.style.display = "block";
+    } finally {
+      loginBtn.disabled = false;
+      loginBtn.textContent = "Log in";
+    }
+  });
+
+  document.getElementById("logoutBtn").addEventListener("click", () => signOut(auth));
+
+  onAuthStateChanged(auth, (user) => {
+    if (user) {
+      loginScreen.style.display = "none";
+      dashboard.style.display = "block";
+      document.getElementById("whoami").textContent = user.email;
+      startListeners();
+    } else {
+      loginScreen.style.display = "flex";
+      dashboard.style.display = "none";
+    }
+  });
+
+  // ---------------- Tabs ----------------
+  document.querySelectorAll(".tab-btn").forEach(btn => {
+    btn.addEventListener("click", () => {
+      document.querySelectorAll(".tab-btn").forEach(b => b.classList.remove("active"));
+      document.querySelectorAll(".panel").forEach(p => p.classList.remove("active"));
+      btn.classList.add("active");
+      document.getElementById("panel-" + btn.dataset.tab).classList.add("active");
+    });
+  });
+
+  // ---------------- Helpers ----------------
+  function fmtDate(ts) {
+    if (!ts || !ts.toDate) return "—";
+    const d = ts.toDate();
+    return d.toLocaleString("en-GB", {
+      day: "2-digit", month: "short", year: "numeric",
+      hour: "2-digit", minute: "2-digit"
+    });
+  }
+  function isToday(ts) {
+    if (!ts || !ts.toDate) return false;
+    const d = ts.toDate();
+    const now = new Date();
+    return d.toDateString() === now.toDateString();
+  }
+  function esc(str) {
+    if (!str) return "";
+    const div = document.createElement("div");
+    div.textContent = str;
+    return div.innerHTML;
+  }
+
+  // ---------------- Live data ----------------
+  let listenersStarted = false;
+  let todayBookings = 0;
+  let todayClicks = 0;
+
+  function updateTodayStat() {
+    document.getElementById("statToday").textContent = todayBookings + todayClicks;
+  }
+
+  function startListeners() {
+    if (listenersStarted) return;
+    listenersStarted = true;
+
+    // Bookings
+    const bookingsQ = query(collection(db, "bookings"), orderBy("createdAt", "desc"), limit(500));
+    onSnapshot(bookingsQ, (snap) => {
+      document.getElementById("bookingsLoading").style.display = "none";
+      const body = document.getElementById("bookingsBody");
+      const emptyEl = document.getElementById("bookingsEmpty");
+      body.innerHTML = "";
+      let todayCount = 0;
+      snap.forEach(doc => {
+        const b = doc.data();
+        if (isToday(b.createdAt)) todayCount++;
+        const tr = document.createElement("tr");
+        tr.innerHTML = `
+          <td>${fmtDate(b.createdAt)}</td>
+          <td>${esc(b.name) || "—"}</td>
+          <td>${esc(b.phone) || "—"}</td>
+          <td>${esc(b.message) || "—"}</td>
+          <td>${esc(b.page) || "—"}</td>
+        `;
+        body.appendChild(tr);
+      });
+      emptyEl.style.display = snap.empty ? "block" : "none";
+      document.getElementById("statBookings").textContent = snap.size;
+      todayBookings = todayCount;
+      updateTodayStat();
+    });
+
+    // Clicks (WhatsApp + call)
+    const clicksQ = query(collection(db, "clicks"), orderBy("createdAt", "desc"), limit(1000));
+    onSnapshot(clicksQ, (snap) => {
+      document.getElementById("clicksLoading").style.display = "none";
+      const body = document.getElementById("clicksBody");
+      const emptyEl = document.getElementById("clicksEmpty");
+      body.innerHTML = "";
+      let waCount = 0, callCount = 0, todayCount = 0;
+      snap.forEach(doc => {
+        const c = doc.data();
+        if (c.type === "whatsapp") waCount++;
+        if (c.type === "call") callCount++;
+        if (isToday(c.createdAt)) todayCount++;
+        const badgeClass = c.type === "whatsapp" ? "badge-whatsapp" : (c.type === "call" ? "badge-call" : "badge-form");
+        const tr = document.createElement("tr");
+        tr.innerHTML = `
+          <td>${fmtDate(c.createdAt)}</td>
+          <td><span class="badge ${badgeClass}">${esc(c.type) || "—"}</span></td>
+          <td>${esc(c.page) || "—"}</td>
+          <td>${esc(c.detail) || "—"}</td>
+        `;
+        body.appendChild(tr);
+      });
+      emptyEl.style.display = snap.empty ? "block" : "none";
+      document.getElementById("statWhatsapp").textContent = waCount;
+      document.getElementById("statCall").textContent = callCount;
+      todayClicks = todayCount;
+      updateTodayStat();
+    });
+  }
+</script>
+</body>
+</html>
